@@ -1,23 +1,23 @@
+import math
+from math import sqrt
+
 from Quadrilateral import Quadrilateral
 
 
 class Trapezoid(Quadrilateral):
-    def __init__(self, firstPoint, secondPoint, thirdPoint, fourthPoint, bases, Height, legsHeight1, legsHeight2,
-                 legsHeight3, legsHeight4):
-        self.legsHeight4 = legsHeight4
-        self.legsHeight3 = legsHeight3
-        self.legsHeight2 = legsHeight2
-        self.legsHeight1 = legsHeight1
-        self.Height = Height
-        self.bases = bases
-        self.fourthPoint = fourthPoint
-        self.thirdPoint = thirdPoint
-        self.secondPoint = secondPoint
-        self.firstPoint = firstPoint
-        super().__init__(firstPoint, secondPoint, thirdPoint, fourthPoint)
+    def __init__(self, xPoint1, xPoint2, xPoint3, xPoint4, yPoint1, yPoint2, yPoint3, yPoint4):
+        super().__init__(xPoint1, xPoint2, xPoint3, xPoint4, yPoint1, yPoint2, yPoint3, yPoint4)
 
-    def areaQuadrilateral(self):
-        return self.bases + self.bases / 2 * self.Height
+    def findDistanceBetweenXCoordinates(self):
+        return math.sqrt(math.pow(self.xPoint2 - self.xPoint1, 2) +
+                         math.pow(self.yPoint2 - self.yPoint1, 2) * 1.0)
 
-    def perimeterQuadrilateral(self):
-        return self.legsHeight1 + self.legsHeight2 + self.legsHeight3 + self.legsHeight4
+    def findDistanceBetweenYCoordinates(self):
+        return math.sqrt(math.pow(self.xPoint4 - self.xPoint3, 2) +
+                         math.pow(self.yPoint4 - self.yPoint3, 2) * 1.0)
+
+    def areaTrapezoid(self):
+        return self.findDistanceBetweenXCoordinates() * self.findDistanceBetweenYCoordinates()
+
+    def perimeterTrapezoid(self):
+        return 2 * (self.findDistanceBetweenXCoordinates() + self.findDistanceBetweenYCoordinates())
