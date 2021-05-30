@@ -32,6 +32,7 @@ def main():
     print("Perimeter of Square: " + str(objSquare.perimeterSquare()))
 
     # Finding area and perimeter of Rectangle
+    # enter (5,0 , -4,0, -4,-5, 5,-5)
     print("\n")
     print("Area and  Perimeter of Rectangle")
     objRectangle = Rectangle(xCoordinatePoint1, xCoordinatePoint2, xCoordinatePoint3, xCoordinatePoint4,
@@ -49,11 +50,11 @@ def main():
     print("Area Of Parallelogram: " + str(objParallelogram.areaParallelogram()))
     print("Perimeter of Parallelogram: " + str(objParallelogram.perimeterParallelogram()))
 
-    # Finding area and perimeter of Trapezoid
+    # # Finding area and perimeter of Trapezoid
     print("\n")
     print("Area and  Perimeter of Trapezoid")
     objTrapezoid = Trapezoid(xCoordinatePoint1, xCoordinatePoint2, xCoordinatePoint3, xCoordinatePoint4,
-                                 yCoordinatePoint1, yCoordinatePoint2, yCoordinatePoint3, yCoordinatePoint4)
+                             yCoordinatePoint1, yCoordinatePoint2, yCoordinatePoint3, yCoordinatePoint4)
 
     print("Area Of Parallelogram: " + str(objTrapezoid.areaTrapezoid()))
     print("Perimeter of Parallelogram: " + str(objTrapezoid.perimeterTrapezoid()))
