@@ -13,7 +13,21 @@ class Square(Quadrilateral):
                          math.pow(self.yPoint2 - self.yPoint1, 2) * 1.0)
 
     def areaSquare(self):
-        return math.sqrt(self.findDistance())  # length of any side (they are all the same)
+        return math.pow(self.findDistance(), 2)  # length of any side (they are all the same)
 
     def perimeterSquare(self):
         return 4 * self.findDistance()
+
+    def drawRectangle(self):
+        width = int(self.findDistance())
+        height = int(self.findDistance())
+        print("side of width " + str(width))
+        print("side of width " + str(height))
+        for i in range(width):
+            # self.findDistanceBetweenYCoordinates()
+            for j in range(height):
+                if i == 0 or i == (width - 1) or j == 0 or j == (height - 1):
+                    print("*", end=" ")
+                else:
+                    print("*", end=" ")
+            print("")

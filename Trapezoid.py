@@ -9,7 +9,7 @@ class Trapezoid(Quadrilateral):
         super().__init__(xPoint1, xPoint2, xPoint3, xPoint4, yPoint1, yPoint2, yPoint3, yPoint4)
 
     def findHeightOfTrapezoid(self):  # find height
-        return self.xPoint2 - self.xPoint1
+        return self.yPoint3 - self.yPoint4
 
     def findBase41(self):  # forth side
         return self.xPoint4 - self.xPoint1
@@ -24,7 +24,7 @@ class Trapezoid(Quadrilateral):
         return self.xPoint2 - self.xPoint1
 
     def areaTrapezoid(self):
-        return self.findBase21() + self.findBase41()*self.findHeightOfTrapezoid()/2
+        return self.findBase32() + self.findBase41()*self.findHeightOfTrapezoid()/2
 
     def perimeterTrapezoid(self):
         return self.findBase21() + self.findBase41()+self.findBase32()+self.findBase43()

@@ -1,3 +1,4 @@
+import math
 from cmath import sqrt
 
 
@@ -12,12 +13,30 @@ class Quadrilateral:
         self.xPoint2 = xPoint2
         self.xPoint1 = xPoint1
 
-    def findDistance(self):
-        dist1 = sqrt((self.xPoint2 - self.xPoint1) ** 2 + (self.yPoint2 - self.yPoint2) ** 2)
-        dist2 = sqrt((self.xPoint4 - self.xPoint3) ** 2 + (self.yPoint4 - self.yPoint3) ** 2)
+    def findDistance1(self):
+        return math.sqrt(math.pow(self.xPoint2 - self.xPoint1, 2) +
+                         math.pow(self.yPoint2 - self.yPoint1, 2) * 1.0)
+
+    def findDistance2(self):
+        return math.sqrt(math.pow(self.xPoint4 - self.xPoint3, 2) +
+                         math.pow(self.yPoint4 - self.yPoint3, 2) * 1.0)
+
+    def findDistance3(self):
+        return math.sqrt(math.pow(self.xPoint4 - self.xPoint1, 2) +
+                         math.pow(self.yPoint4 - self.yPoint1, 2) * 1.0)
+
+    def findDistance4(self):
+        return math.sqrt(math.pow(self.xPoint3 - self.xPoint2, 2) +
+                         math.pow(self.yPoint3 - self.yPoint1, 2) * 1.0)
+
+    def findS(self):
+        return (self.findDistance1() + self.findDistance2() + self.findDistance3() + self.findDistance4()) / 2
 
     def areaQuadrilateral(self):
-        return 1 / 2 * self.diagonal * self.SumOfHeightOfTwoTriangle
+        return math.sqrt((self.findS() - self.findDistance1()) *
+                         (self.findS() - self.findDistance2()) *
+                         (self.findS() - self.findDistance3()) *
+                         (self.findS() - self.findDistance4()))
 
     def perimeterQuadrilateral(self):
-        return self.side1 + self.side2 + self.side3 + self.side4
+        return self.findDistance1() + self.findDistance2() + self.findDistance3() + self.findDistance4()
