@@ -135,6 +135,8 @@ def main():
             print("Area Of Trapezoid: " + str(objTrapezoid.areaTrapezoid()))
             print("Perimeter of Trapezoid: " + str(objTrapezoid.perimeterTrapezoid()))
 
+            # print("Draw Parallelogram: "+str(objTrapezoid.drawTrapezoid()))
+
         elif choice == 'Q' or choice == 'q':
             print("\n")
             # enter (-1,3) (3,3) (5,-1) (-2,-1)

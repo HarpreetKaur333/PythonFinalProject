@@ -24,7 +24,22 @@ class Trapezoid(Quadrilateral):
         return self.xPoint2 - self.xPoint1
 
     def areaTrapezoid(self):
-        return self.findBase32() + self.findBase41()*self.findHeightOfTrapezoid()/2
+        return self.findBase32() + self.findBase41() * self.findHeightOfTrapezoid() / 2
 
     def perimeterTrapezoid(self):
-        return self.findBase21() + self.findBase41()+self.findBase32()+self.findBase43()
+        return self.findBase21() + self.findBase41() + self.findBase32() + self.findBase43()
+
+    # def drawTrapezoid(self):
+    #     width = int(self.findBase41())
+    #     height = int(self.findHeightOfTrapezoid())
+    #     print("side of width " + str(width))
+    #     print("side of width " + str(height))
+    #     for row in range(height):
+    #         if row == 0 or row == (height + 1):
+    #             for col in range(width):
+    #                 if col == 0 or col == (width - 1):
+    #                     print(" ")
+    #         for col in range(width):
+    #             if col == 0 or col == (width + 2):
+    #                 print("*")
+    #         print("")
